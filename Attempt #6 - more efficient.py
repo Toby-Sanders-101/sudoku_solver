@@ -2,15 +2,18 @@ import time
 import os
 import sys
 
-#"6xxx2xxx8x13xxx54xx2x8x4x6xxx2x6x4xx4xx1x2xx9xx5x4x8xxx5x7x3x9xx38xxx21x9xxx1xxx3" - solve in two
-#"64752193881367954252983416737296845148615237919534782625178369473849621596xxxxxxx" - solve in one
-#"x475219388x367954252x834167372x684514861x237919534x826251783x947384962x596421578x" - solve in one
-#"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" - solve in two
-#"x1xx4xxxxx2xxx79x1x6x28xxxx8xx1xxxx3xxxx6xxxx4xxxx8xx5xxxx16x7x6x39xxx1xxxxx2xx9x" - solve in one
-#"xx53xxxxx8xxxxxx2xx7xx1x5xx4xxxx53xxx1xx7xxx6xx32xxx8xx6x5xxxx9xx4xxxx3xxxxxx97xx"
+#Format for inputs is:
+# -Single string
+# -81 characters long
+# -using 'x's to represent empty spaces
+#Examples:
+#6xxx2xxx8x13xxx54xx2x8x4x6xxx2x6x4xx4xx1x2xx9xx5x4x8xxx5x7x3x9xx38xxx21x9xxx1xxx3
+#64752193881367954252983416737296845148615237919534782625178369473849621596xxxxxxx
+#x475219388x367954252x834167372x684514861x237919534x826251783x947384962x596421578x
+#x1xx4xxxxx2xxx79x1x6x28xxxx8xx1xxxx3xxxx6xxxx4xxxx8xx5xxxx16x7x6x39xxx1xxxxx2xx9x
     
-def decodeGrid(grid): #"xx1xxx3xxx8xxxxx2xxx8xx"...
-	decodedGrid = []
+def decodeGrid(grid):
+	decodedGrid = [] #array of shape 3x9x9
 	
 	byRow = []
 	for row in range(9):
@@ -169,7 +172,6 @@ def useHyp(grid,boolean=True):
 							return g
 						except:
 							print("Error")
-							time.sleep(10)
 	return 0
 
 def findOther(grid):
